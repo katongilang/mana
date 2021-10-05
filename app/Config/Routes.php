@@ -17,8 +17,8 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
-$routes->setDefaultMethod('index');
+$routes->setDefaultController('');
+$routes->setDefaultMethod('');
 $routes->setTranslateURIDashes(true);
 # redirect to modif 404 design
 $routes->set404Override(function(){
@@ -34,7 +34,21 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Auth::login_admin'); // Halaman Index awal
+
+$routes->group('auth', function($routes)
+{   
+    $routes->add('/', 'Auth::login_admin');
+    $routes->add('login', 'Auth::login_admin');
+    $routes->add('logout', 'Auth::logout_admin');
+});
+
+$routes->group('admin',['filter' => 'authfilter'],function($routes)
+{   
+    $routes->add('/', 'Admin\Home::index');
+    $routes->add('sertifikat', 'Admin\Sertifikat::index');
+});
+
 
 /*
  * --------------------------------------------------------------------
