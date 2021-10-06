@@ -12,6 +12,7 @@
 		<div class="content-page">
 			<div class="content">
 				<?=$this->include('layout/navbar')?>
+				<?=$this->include('layout/notif')?>
 				<!-- Start Content-->
 				<?=$this->renderSection('content')?>
 				<!-- container -->

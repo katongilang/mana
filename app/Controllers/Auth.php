@@ -1,14 +1,6 @@
 <?php
 namespace App\Controllers;
-use App\Models\All_model;
-
 class Auth extends BaseController{
-	protected $All_model;
-
-	public function __construct()
-	{
-		$this->All_model = new All_model();
-	}
 
 	/*======================================================*/
 	/*========================= ADMIN ======================*/

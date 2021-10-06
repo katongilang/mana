@@ -14,7 +14,7 @@
 			<h4 class="page-title">Sertifikat</h4>
 		</div>
 	</div>
-</div>     
+</div>
 <!-- end page title --> 
 
 <?=$this->endSection()?>

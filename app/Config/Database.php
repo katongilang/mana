@@ -32,11 +32,11 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'localhost',
-        'username' => '',
-        'password' => '',
-        'database' => '',
-        'DBDriver' => 'MySQLi',
+        'hostname' => '192.168.10.1',
+        'username' => 'sa',
+        'password' => 'z@q12wsx',
+        'database' => 'yakkumdatabase',
+        'DBDriver' => 'sqlsrv',
         'DBPrefix' => '',
         'pConnect' => false,
         'DBDebug'  => (ENVIRONMENT !== 'production'),
